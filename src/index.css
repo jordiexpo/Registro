@@ -1,0 +1,102 @@
+/* Restablecer márgenes y padding globales para evitar desbordes y problemas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegura que el body ocupe toda la altura de la pantalla */
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: #f0f0f0; /* Color de fondo suave */
+  color: #333;
+}
+
+/* Asegúrate de que la raíz de la aplicación tenga una altura completa */
+#root {
+  height: 100%;
+}
+
+/* Ajustes de visualización para evitar problemas de scroll o desbordes */
+html, body {
+  height: 100%;
+  overflow-x: hidden;  /* Evita el desbordamiento horizontal */
+  overflow-y: auto;    /* Habilita solo el scroll vertical */
+}
+
+/* Estilo para centrar la página de contenido */
+.content {
+  padding: 20px;
+  min-height: 100%;  /* Asegura que el contenido ocupe todo el espacio disponible */
+}
+
+/* Estilo para que el botón flotante sea accesible y esté encima del contenido */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.floating-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Fondo semitransparente para el pop-up */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);  /* Fondo oscuro semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;  /* Asegura que el pop-up esté por encima del contenido */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Estilo del contenido dentro del pop-up */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cierre en el pop-up */
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-btn:hover {
+  background-color: #c82333;
+}
+
+/* Animación para el pop-up */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

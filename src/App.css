@@ -1,0 +1,80 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.content {
+  padding: 20px;
+  margin-bottom: 60px; /* Para que el contenido no se solape con el botón flotante */
+}
+
+/* Estilos del botón flotante */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;  /* Se sitúa 20px desde el fondo */
+  right: 20px;   /* Se sitúa 20px desde el borde derecho */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.floating-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos del pop-up */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);  /* Fondo oscuro semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;  /* Asegura que el pop-up esté por encima del contenido */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-btn:hover {
+  background-color: #c82333;
+}
+
+/* Animación para el pop-up */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
